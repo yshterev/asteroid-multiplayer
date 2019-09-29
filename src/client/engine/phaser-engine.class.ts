@@ -1,6 +1,6 @@
 import { Game } from "../game/game.class";
 import { LifeCycle } from "./lifecycle";
-import { Phaser } from "phaser-ce";
+import Phaser from "phaser-ce";
 
 export class PhaserSpaceGame extends Game implements LifeCycle {
   private game: Phaser.Game;
@@ -19,7 +19,7 @@ export class PhaserSpaceGame extends Game implements LifeCycle {
     game.crossOrigin = "anonymous";
     game.image("space", "assets/background.jpg");
     game.image("laser", "assets/bullet.png");
-    game.spritesheet("dust", "assets/dust.png", 64, 64, 16);
+    // game.spritesheet("dust", "assets/dust.png", 64, 64, 16);
     game.spritesheet("kaboom", "assets/explosions.png", 64, 64, 16);
     game.image("pickup", "assets/pickup.png");
     game.spritesheet("shooter-sprite", "assets/ship.png", 32, 32);
