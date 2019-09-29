@@ -1,1 +1,1 @@
-document.body.textContent = 'Hi, I am being served correctly';
+import './src/index';

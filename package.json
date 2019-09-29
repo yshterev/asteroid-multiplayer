@@ -4,12 +4,12 @@
     "description": "Simple multiplayer using socket.io, phaser and typescript",
     "main": "index.js",
     "scripts": {
-        "precommit": "npm run lint",
+        "precommit": "yarn lint",
         "lint": "tslint -c tslint.json -p .",
-        "prestart:dev": "npm run prestart",
-        "start:dev": "webpack -w & tsc -w --noEmit src/server/server & nodemon src/server/server.js",
+        "prestart:dev": "yarn prestart",
+        "start:dev": "concurrently --kill-others \"webpack -w & tsc -w --noEmit src/server/server\" \"nodemon src/server/server.js\"",
         "build:release": "webpack --env=dev --optimize-minimize",
-        "prestart": "npm i && tsc -p ./",
+        "prestart": "yarn && tsc -p ./",
         "start": "webpack && node ./src/server/server.js"
     },
     "repository": {
@@ -49,6 +49,7 @@
         "resolve": "^1.8.1",
         "ts-loader": "^5.3.1",
         "tslint": "^5.11.0",
+        "tslint-config-prettier": "^1.18.0",
         "typescript": "^3.2.1",
         "webpack": "^4.26.1",
         "webpack-cli": "^3.1.2",
